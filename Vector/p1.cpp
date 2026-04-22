@@ -39,9 +39,8 @@ int main() {
         for(int i = 1; i <= sqrt(number); i++) {
             if(number % i == 0 && i != number / i) {
                 v.push_back(i);
-                v.push_back(number / i);
-            } else if(number % i == 0 && i == number / i)
-                v.push_back(i);
+                if(i != number / i) v.push_back(number / i);
+            }
         }
 
         // Sorting vector accending order
